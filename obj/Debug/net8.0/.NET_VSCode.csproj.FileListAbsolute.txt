@@ -1,0 +1,18 @@
+C:\Users\j.silva\OneDrive - Pipa Studios\Documentos\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\j.silva\OneDrive - Pipa Studios\Documentos\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.AssemblyInfoInputs.cache
+C:\Users\j.silva\OneDrive - Pipa Studios\Documentos\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.AssemblyInfo.cs
+C:\Users\j.silva\OneDrive - Pipa Studios\Documentos\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.csproj.CoreCompileInputs.cache
+C:\.NET_VSCode\bin\Debug\net8.0\.NET_VSCode.exe
+C:\.NET_VSCode\bin\Debug\net8.0\.NET_VSCode.deps.json
+C:\.NET_VSCode\bin\Debug\net8.0\.NET_VSCode.runtimeconfig.json
+C:\.NET_VSCode\bin\Debug\net8.0\.NET_VSCode.dll
+C:\.NET_VSCode\bin\Debug\net8.0\.NET_VSCode.pdb
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.AssemblyInfoInputs.cache
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.AssemblyInfo.cs
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.csproj.CoreCompileInputs.cache
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.dll
+C:\.NET_VSCode\obj\Debug\net8.0\refint\.NET_VSCode.dll
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.pdb
+C:\.NET_VSCode\obj\Debug\net8.0\.NET_VSCode.genruntimeconfig.cache
+C:\.NET_VSCode\obj\Debug\net8.0\ref\.NET_VSCode.dll

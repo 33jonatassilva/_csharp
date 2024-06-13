@@ -4,27 +4,23 @@ namespace Test
 {
     class Person
     {
-        private string _first_name;
-        private string _last_name;
-        private string _email;
-        private string _password;
-        private int _age;
-        private float _height;
-        private string _cpf;
+        public static string _first_name = string.Empty;
+        public static string _last_name = string.Empty;
+        public static string _email = string.Empty;
+        public static string _password = string.Empty;
+        public static int _age;
+        public static float _height;
+        public static string _cpf = string.Empty;
 
 
         public Person()
         {
-            _first_name = "";
-            _last_name = "";
-            _email = "";
-            _password = "";
             _age = -1;
             _height = -1;
-            _cpf = "";
         }
 
-        public Person(string first_name, string last_name, string email, string password, int age, float height, string cpf){
+        public Person(string first_name, string last_name, string email, string password, int age, float height, string cpf)
+        {
             _first_name = first_name;
             _last_name = last_name;
             _email = email;
@@ -37,7 +33,7 @@ namespace Test
         override
         public string ToString()
         {
-            return $" \n Nome: {_first_name + " " + _last_name}\n Idade: {_age}\n Altura: {_height}\n CPF: {_cpf}\n E-mail: {_email}\n Senha: {_password}\n";
+            return $"\nNome: {_first_name + " " + _last_name}\nIdade: {_age}\nAltura: {_height}\nCPF: {_cpf}\nE-mail: {_email}\nSenha: {_password}\n";
         }
     }
 }

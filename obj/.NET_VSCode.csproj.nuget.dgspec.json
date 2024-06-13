@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.NET_VSCode\\.NET_VSCode.csproj": {}
+    "C:\\.NET_VSCode\\_csharp\\.NET_VSCode.csproj": {}
   },
   "projects": {
-    "C:\\.NET_VSCode\\.NET_VSCode.csproj": {
+    "C:\\.NET_VSCode\\_csharp\\.NET_VSCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.NET_VSCode\\.NET_VSCode.csproj",
+        "projectUniqueName": "C:\\.NET_VSCode\\_csharp\\.NET_VSCode.csproj",
         "projectName": ".NET_VSCode",
-        "projectPath": "C:\\.NET_VSCode\\.NET_VSCode.csproj",
+        "projectPath": "C:\\.NET_VSCode\\_csharp\\.NET_VSCode.csproj",
         "packagesPath": "C:\\Users\\j.silva\\.nuget\\packages\\",
-        "outputPath": "C:\\.NET_VSCode\\obj\\",
+        "outputPath": "C:\\.NET_VSCode\\_csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\j.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",

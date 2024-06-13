@@ -18,6 +18,19 @@ namespace Test
             _quantity = -1;
         }
 
+        public Product(string id, string name, string category, float value, int quantity)
+        {
+            _id = id;
+            _name = name;
+            _category = category;
+            _value = value;
+            _quantity = quantity;
+        }
 
+        override
+        public string ToString()
+        {
+            return $"ID: {_id}\nNome: {_name}\nCategoria: {_category}\nValue: {_value}\nQuantidade: {_quantity}\n";
+        }
     }
 }

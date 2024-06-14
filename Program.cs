@@ -1,24 +1,58 @@
-﻿
+﻿using System.ComponentModel.Design;
+using System.Reflection;
+using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
+
+
 
 namespace Test
 {
+    
     class Program
     {
+
+        public static void Menu()
+        {
+
+
+            begin:
+            Console.WriteLine("\n1. Usuários\n" +
+                              "2. Produtos\n" +
+                              "Digite uma opção: ");
+
+            string option = Console.ReadLine();
+
+            if(option == null) return;
+
+
+            if(int.Parse(option) == 1)
+            {
+                Console.WriteLine(
+                "1. Cadastrar usuário\n" +
+                "2. Editar usuário\n" + 
+                "3. Excluir usuário\n" + 
+                "4. Consultar usuário");
+            } 
+            
+            else if (int.Parse(option) == 2)
+            {    
+                Console.WriteLine(
+                "1. Cadastrar produto\n" +
+                "2. Editar produto\n" + 
+                "3. Excluir produto\n" + 
+                "4. Consultar produto");
+            }
+
+            else
+            {
+                Console.WriteLine("Opção inválida, tente novamente\n");
+                goto begin;
+            }
+        }
+
         public static void Main(string[] args)
         {
-            Person person = new Person("Jonatas", "Silva", "jonatasbsilva1@outlook.com", "1234", 21, 175, "000-000-000-00");
-            Product product = new Product("111222", "Melancia", "Fruta", 7.5f, 50);
-
-
-            Employee employee = new Employee("1111", "Supervisor", 7000, "Jonatas", "Silva", "jonatasbsilva1@outlook.com", "1234", 21, 175, "000-000-000-00");
-
-            Console.WriteLine(employee.ToString());
-            
-
-           
-            //Console.WriteLine(person.ToString());
-            
-            //Console.WriteLine(product.ToString());
+            Menu();
         }
     }
 }

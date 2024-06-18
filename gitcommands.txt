@@ -1,0 +1,157 @@
+# Configuração Inicial
+
+## Configura as opções do Git, como o nome de usuário e o email.
+git config --global user.name "Seu Nome"
+git config --global user.email "seu.email@exemplo.com"
+
+# Criação e Inicialização de Repositórios
+
+## Inicializa um novo repositório Git em um diretório.
+git init
+
+## Clona um repositório remoto para o diretório local.
+git clone <url-do-repositório>
+
+# Rastreamento de Arquivos
+
+## Adiciona arquivos ou mudanças ao índice (staging area).
+git add <arquivo>
+git add . # (adiciona todos os arquivos modificados)
+
+## Mostra o estado dos arquivos no índice e no diretório de trabalho.
+git status
+
+## Registra mudanças no repositório com uma mensagem descritiva.
+git commit -m "mensagem do commit"
+
+# Ramificações (Branches) e Fusões (Merges)
+
+## Lista, cria ou deleta branches.
+git branch # (lista branches)
+git branch <nome-do-branch> # (cria um novo branch)
+
+## Troca de branch ou restaura arquivos no diretório de trabalho.
+git checkout <nome-do-branch> # (troca para um branch existente)
+git checkout -b <nome-do-branch> # (cria e troca para um novo branch)
+
+## Mescla mudanças de um branch no branch atual.
+git merge <nome-do-branch>
+
+# Sincronização com Repositórios Remotos
+
+## Gerencia repositórios remotos.
+git remote add <nome> <url> # (adiciona um repositório remoto)
+
+## Baixa mudanças de um repositório remoto sem mesclar.
+git fetch <nome-do-remoto>
+
+## Baixa e mescla mudanças de um repositório remoto.
+git pull <nome-do-remoto> <branch>
+
+## Envia mudanças para um repositório remoto.
+git push <nome-do-remoto> <branch>
+
+# Inspeção e Comparação
+
+## Mostra o histórico de commits.
+git log
+
+## Mostra diferenças entre commits, branches, ou o índice e o diretório de trabalho.
+git diff
+git diff <commit1> <commit2>
+
+## Mostra mudanças em um commit específico.
+git show <commit>
+
+# Revertendo Mudanças
+
+## Reseta o índice e/ou o diretório de trabalho para um estado anterior.
+git reset <commit> # (reseta o índice e o diretório de trabalho para o commit especificado)
+
+## Cria um novo commit que desfaz mudanças de um commit específico.
+git revert <commit>
+
+## Remove arquivos não rastreados do diretório de trabalho.
+git clean -f # (força a remoção de arquivos)
+
+# Outras Funcionalidades Úteis
+
+## Salva temporariamente mudanças não commitadas para limpar o diretório de trabalho.
+git stash
+git stash pop # (restaura as mudanças salvas)
+
+## Marca commits importantes com tags.
+git tag <nome-da-tag>
+git tag -a <nome-da-tag> -m "mensagem da tag" # (cria uma tag anotada)
+
+# Operações Especiais e Avançadas
+
+## Aplica as mudanças de um ou mais commits existentes em outra branch.
+git cherry-pick <commit> # (aplica o commit especificado na branch atual)
+git cherry-pick <commit1> <commit2> # (aplica múltiplos commits)
+
+## Reaplica commits em cima de outro base commit, mudando o histórico do branch.
+git rebase <branch/base> # (rebase da branch atual no branch/base especificado)
+git rebase -i <commit> # (rebase interativo para editar commits)
+
+## Usa uma busca binária para encontrar o commit que introduziu um bug.
+git bisect start
+git bisect bad # (marca o estado atual como "ruim")
+git bisect good <commit> # (marca um commit conhecido como "bom")
+git bisect reset # (encerra o bisect)
+
+# Salvando e Recuperando Mudanças
+
+## Salva temporariamente mudanças não commitadas para limpar o diretório de trabalho.
+git stash # (salva mudanças)
+git stash pop # (restaura e remove a última stash)
+git stash apply # (restaura a última stash sem removê-la)
+git stash list # (lista todas as stashes)
+git stash drop # (remove uma stash especificada)
+
+# Manipulação de Tags
+
+## Marca commits importantes com tags.
+git tag <nome-da-tag> # (cria uma tag leve)
+git tag -a <nome-da-tag> -m "mensagem da tag" # (cria uma tag anotada)
+git tag -d <nome-da-tag> # (deleta uma tag)
+git push <remote> <tag> # (envia uma tag para o repositório remoto)
+git push <remote> --tags # (envia todas as tags para o repositório remoto)
+
+# Correção de Erros e Ajustes
+
+## Modifica o último commit.
+git commit --amend -m "nova mensagem do commit" # (edita a mensagem do último commit)
+git commit --amend # (adiciona mudanças ao último commit)
+
+## Mostra um histórico de referências para o repositório.
+git reflog
+
+## Mostra quem modificou cada linha de um arquivo e quando.
+git blame <arquivo>
+
+# Colaboração e Sincronização Avançadas
+
+## Gerencia repositórios remotos.
+git remote -v # (lista repositórios remotos)
+git remote add <nome> <url> # (adiciona um repositório remoto)
+git remote remove <nome> # (remove um repositório remoto)
+
+## Baixa mudanças de um repositório remoto sem mesclar.
+git fetch <nome-do-remoto>
+
+## Baixa e mescla mudanças de um repositório remoto.
+git pull <nome-do-remoto> <branch>
+
+## Envia mudanças para um repositório remoto.
+git push <nome-do-remoto> <branch>
+
+## Força o envio de mudanças para um repositório remoto, sobrescrevendo o histórico.
+git push --force
+
+# Manipulação de Submódulos
+
+## Gerencia repositórios como submódulos dentro de um repositório principal.
+git submodule add <url> # (adiciona um novo submódulo)
+git submodule init # (inicializa os submódulos)
+git submodule update # (atualiza os submódulos)

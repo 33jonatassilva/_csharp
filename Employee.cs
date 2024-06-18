@@ -1,12 +1,16 @@
 
 
+using System.Data;
+using Microsoft.IdentityModel.Protocols;
+
 namespace Test
 {
     class Employee : Person
     {
-        private string _id;
-        private string _job;
-        private float _salary;
+        public string _id {get; set;}
+        public string _job {get; set;}
+        public float _salary {get; set;}
+
 
         public Employee() //: base(_first_name, _last_name, _email, _password, _age, _height, _cpf)
         {

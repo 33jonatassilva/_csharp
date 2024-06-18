@@ -18,7 +18,7 @@ namespace Test
             _quantity = -1;
         }
 
-        public Product(string id, string name, string category, float value, int quantity)
+    public Product(string id, string name, string category, float value, int quantity)
         {
             _id = id;
             _name = name;

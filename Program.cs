@@ -9,7 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Test
 {
-    
+
     class Program
     {
 
@@ -18,51 +18,53 @@ namespace Test
 
             string[] option = new string[2];
 
-            begin:
+        begin:
             Console.WriteLine("\n1. Usuários\n" +
                               "2. Produtos\n\n" +
                               "Digite uma opção válida: ");
 
             option[0] = Console.ReadLine();
 
-            if(option[0] == null) return null;
+            if (option[0] == null) return null;
 
 
-            if(int.Parse(option[0]) == 1)
+            if (int.Parse(option[0]) == 1)
             {
                 do
                 {
-                Console.WriteLine(
-                "\n1. Cadastrar usuário\n" +
-                "2. Editar usuário\n" + 
-                "3. Excluir usuário\n" + 
-                "4. Consultar usuário\n\n" +
-                "Digite uma opcão válida: ");
+                    Console.WriteLine(
+                    "\n1. Cadastrar usuário\n" +
+                    "2. Editar usuário\n" +
+                    "3. Excluir usuário\n" +
+                    "4. Consultar usuário\n" +
+                    "5. Listar produtos\n\n" +
+                    "Digite uma opcão válida: ");
 
-                
 
-                option[1] = Console.ReadLine();
 
-                } while(int.Parse(option[1]) < 1 || int.Parse(option[1]) > 4);
+                    option[1] = Console.ReadLine();
+
+                } while (int.Parse(option[1]) < 1 || int.Parse(option[1]) > 5);
 
                 //return int.Parse(option[1]);
-            } 
-            
+            }
+
             else if (int.Parse(option[0]) == 2)
-            {    
-                
+            {
+
                 do
                 {
-                Console.WriteLine(
-                "\n1. Cadastrar produto\n" +
-                "2. Editar produto\n" + 
-                "3. Excluir produto\n" + 
-                "4. Consultar produto\n\n" +
-                "Digite uma opcão válida: ");
+                    Console.WriteLine(
+                    "\n1. Cadastrar produto\n" +
+                    "2. Editar produto\n" +
+                    "3. Excluir produto\n" +
+                    "4. Consultar produto\n" +
+                    "5. Listar produtos\n\n" +
+                    "Digite uma opcão válida: ");
 
-                option[1] = Console.ReadLine();
+                    option[1] = Console.ReadLine();
 
-                } while(int.Parse(option[1]) < 1 || int.Parse(option[1]) > 4);
+                } while (int.Parse(option[1]) < 1 || int.Parse(option[1]) > 5);
 
 
                 //return int.Parse(option);
@@ -86,65 +88,55 @@ namespace Test
             option[1] = int.Parse(aux[1]);
 
 
-            List<Employee> Organization = new List<Employee>();
-            List<Product> Estoque = new List<Product>();
+            Dictionary<string, Employee> Organization = new Dictionary<string, Employee>();
+            Dictionary<string, Employee> Stock = new Dictionary<string, Employee>();
+
 
             Employee auxEmp = new Employee();
+            EmployeeFunc slave = new EmployeeFunc();
+
             Product auxPro = new Product();
 
 
-            if(option[0] == 1)
+            if (option[0] == 1)
             {
 
-            switch (option[1]) {
+                switch (option[1])
+                {
+
+                    case 1:
+
+                        Organization.Add(slave.GenerateID(), slave.insertEmployee());
+                        break;
+
+                    case 2:
 
 
-                
-                case 1:
 
-                    Console.WriteLine("Digite o nome do usuário: ");
-                    auxEmp._first_name = Console.ReadLine();
-                    Console.WriteLine("Digite o sobrenome do usuário: ");
-                    auxEmp._last_name = Console.ReadLine();
-                    Console.WriteLine("Digite a função do usuário: ");
-                    auxEmp._job = Console.ReadLine();
-                    Console.WriteLine("Digite o salário do usuário: ");
-                    auxEmp._salary = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Digite o e-mail do usuário: ");
-                    auxEmp._email = Console.ReadLine();
-                    Console.WriteLine("Digite o idade do usuário: ");
-                    auxEmp._age = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Digite o senha do usuário: ");
-                    auxEmp._password = Console.ReadLine();
-                    Console.WriteLine("Digite o altura do usuário: ");
-                    auxEmp._height = float.Parse(Console.ReadLine());
-                    Console.WriteLine("Digite o cpf do usuário: ");
-                    auxEmp._cpf = Console.ReadLine();
+                    case 3:
 
-                    Organization.Add(auxEmp);
+                        slave.deleteEmployee(Organization);
+                        break;
+
+                    case 4:
+
+                        slave.consultEmployee(Organization);
+                        break;
+
+                    case 5:
+                        Console.WriteLine(slave.ToString());
+                        break;
+                    default:
+                        break;
 
 
-                    Console.WriteLine(auxEmp.ToString());
-                    break;
+                }
 
-                case 2:
-
-                case 3:
-
-                case 4:
-
-                case 5:
-
-                default:
-                    return;
-
-        
             }
 
-            } 
+            switch (option[1])
+            {
 
-            switch (option[1]) {
-                
                 case 1:
 
                 case 2:

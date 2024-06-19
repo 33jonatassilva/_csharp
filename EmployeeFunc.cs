@@ -1,12 +1,17 @@
 
 
+using System.Data.Common;
 using System.Text;
+using MySql.Data.MySqlClient;
+
+
 
 namespace Test
 {
     class EmployeeFunc
     {
 
+        
         public string GenerateID()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -21,7 +26,7 @@ namespace Test
 
             return id.ToString();
         }
-        
+
         public Employee insertEmployee()
         {
 
@@ -88,30 +93,27 @@ namespace Test
 
             switch (int.Parse(option))
             {
-
-                //case 1:
-
+              //case 1
             }
-
-        
-
         }
+
 
         public bool deleteEmployee(Dictionary<string, Employee> employees)
         {
             Console.WriteLine("Digite o id do funcionário: ");
             string id = Console.ReadLine();
-            
-            if(employees.Remove(id))
+
+            if (employees.Remove(id))
             {
                 Console.WriteLine("Funcionário excluído com sucesso!");
                 return true;
             }
-        
+
             Console.WriteLine("\nFuncionário inexistente! Tente novamente :/ ");
             return false;
 
         }
+
 
         public void consultEmployee(Dictionary<string, Employee> dicio)
         {
@@ -120,7 +122,7 @@ namespace Test
             Console.WriteLine("Digite o id do funcionário: ");
             string id = Console.ReadLine();
 
-            if(dicio.TryGetValue(id, out Employee employee))
+            if (dicio.TryGetValue(id, out Employee employee))
             {
                 Console.WriteLine(employee.ToString());
                 return;
@@ -128,5 +130,7 @@ namespace Test
 
             Console.WriteLine("Funcionário não encontrado. Tente novamente :/");
         }
+            
     }
+
 }

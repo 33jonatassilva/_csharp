@@ -2,13 +2,15 @@
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Reflection;
+using System.Reflection.Emit;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 
 
-
 namespace Test
 {
+
+
 
     class Program
     {
@@ -81,78 +83,9 @@ namespace Test
 
         public static void Main(string[] args)
         {
-            int[] option = new int[2];
-            string[] aux = Menu();
 
-            option[0] = int.Parse(aux[0]);
-            option[1] = int.Parse(aux[1]);
-
-
-            Dictionary<string, Employee> Organization = new Dictionary<string, Employee>();
-            Dictionary<string, Employee> Stock = new Dictionary<string, Employee>();
-
-
-            Employee auxEmp = new Employee();
-            EmployeeFunc slave = new EmployeeFunc();
-
-            Product auxPro = new Product();
-
-
-            if (option[0] == 1)
-            {
-
-                switch (option[1])
-                {
-
-                    case 1:
-
-                        Organization.Add(slave.GenerateID(), slave.insertEmployee());
-                        break;
-
-                    case 2:
-
-
-
-                    case 3:
-
-                        slave.deleteEmployee(Organization);
-                        break;
-
-                    case 4:
-
-                        slave.consultEmployee(Organization);
-                        break;
-
-                    case 5:
-                        Console.WriteLine(slave.ToString());
-                        break;
-                    default:
-                        break;
-
-
-                }
-
-            }
-
-            switch (option[1])
-            {
-
-                case 1:
-
-                case 2:
-
-                case 3:
-
-                case 4:
-
-                case 5:
-
-                default:
-                    return;
-            }
-
-
-
+            DatabaseColector.ExecuteQuery("select * from dbo_employees");
+            
 
         }
     }

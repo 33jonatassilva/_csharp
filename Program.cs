@@ -47,8 +47,6 @@ namespace Test
                     option[1] = Console.ReadLine();
 
                 } while (int.Parse(option[1]) < 1 || int.Parse(option[1]) > 5);
-
-                //return int.Parse(option[1]);
             }
 
             else if (int.Parse(option[0]) == 2)
@@ -81,11 +79,12 @@ namespace Test
             return option;
         }
 
+
+
         public static void Main(string[] args)
         {
 
-            DatabaseColector.ExecuteQuery("select * from dbo_employees");
-            
+            EmployeeFunc.consultEmployee();
 
         }
     }

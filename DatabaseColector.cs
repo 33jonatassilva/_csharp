@@ -7,6 +7,8 @@ public static class DatabaseColector
 
     public static void ExecuteQuery(string query)
     {
+
+
         try
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -17,6 +19,7 @@ public static class DatabaseColector
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
+                
                     while (reader.Read())
                     {
                         // Supondo que sua tabela tenha colunas 'Id' e 'Nome'
@@ -30,7 +33,7 @@ public static class DatabaseColector
                         string password = reader.GetString("password");
                         int age = reader.GetInt32("age");
                         float height = reader.GetFloat("height");
-                        
+
 
 
                         Console.WriteLine($"\nNome: {first_name + " " + last_name}\nCargo: {job}\nSalary: {salary}\nIdade: {age}\nAltura: {height}\nCPF: {cpf}\nE-mail: {email}\nSenha: {password}\n");

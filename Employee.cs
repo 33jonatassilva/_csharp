@@ -14,7 +14,7 @@ namespace Test
         public string _job {get; set;}
         public float _salary {get; set;}
 
-        private EmployeeFunc func = new EmployeeFunc();
+        //private EmployeeFunc func = new EmployeeFunc();
 
 
         public Employee() //: base(_first_name, _last_name, _email, _password, _age, _height, _cpf)

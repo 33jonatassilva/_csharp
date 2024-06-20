@@ -2,19 +2,21 @@
 
 using System.Data.Common;
 using System.Text;
+using Microsoft.Identity.Client;
+using Microsoft.IdentityModel.Tokens;
 using MySql.Data.MySqlClient;
 
 
 
 namespace Test
 {
-    class EmployeeFunc
+    static class EmployeeFunc
     {
 
         
-        public string GenerateID()
+        public static string GenerateID()
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             Random random = new Random();
             StringBuilder id = new StringBuilder(5);
 
@@ -27,7 +29,7 @@ namespace Test
             return id.ToString();
         }
 
-        public Employee insertEmployee()
+        public static Employee insertEmployee()
         {
 
             Employee employee = new Employee();
@@ -71,7 +73,7 @@ namespace Test
             return employee;
         }
 
-        public void editEmployee(Dictionary<string, Employee> employees)
+        public static void editEmployee(Dictionary<string, Employee> employees)
         {
 
             string id = Console.ReadLine();
@@ -98,37 +100,49 @@ namespace Test
         }
 
 
-        public bool deleteEmployee(Dictionary<string, Employee> employees)
+        public static void deleteEmployee()
         {
             Console.WriteLine("Digite o id do funcionário: ");
             string id = Console.ReadLine();
-
-            if (employees.Remove(id))
-            {
-                Console.WriteLine("Funcionário excluído com sucesso!");
-                return true;
-            }
-
-            Console.WriteLine("\nFuncionário inexistente! Tente novamente :/ ");
-            return false;
+            
+            
+            if(id.Length == 5)
+                {
+                    DatabaseColector.ExecuteQuery($"DELETE FROM dbo_employees WHERE id = {id}");
+                    return;
+                }
+            
+                Console.WriteLine("Id inválido! Tente novamente");
+                return;
+            
 
         }
 
 
-        public void consultEmployee(Dictionary<string, Employee> dicio)
+        public static void consultEmployee()
         {
             //Employee employee = new Employee();
 
             Console.WriteLine("Digite o id do funcionário: ");
+
+
             string id = Console.ReadLine();
 
-            if (dicio.TryGetValue(id, out Employee employee))
-            {
-                Console.WriteLine(employee.ToString());
+            if(id.Length == 5)
+                {
+                    DatabaseColector.ExecuteQuery($"SELECT * FROM dbo_employees WHERE idUser = \'{id}\'");
+                    return;
+                }
+            
+                Console.WriteLine("Id inválido! Tente novamente");
                 return;
-            }
 
-            Console.WriteLine("Funcionário não encontrado. Tente novamente :/");
+        }
+
+
+        public static void addEmployee(Employee employee)
+        {
+            DatabaseColector.ExecuteQuery($"INSERT INTO dbo_employees() VALUES ({GenerateID()}, {employee._first_name}, {employee._last_name}, {employee._email}, {employee._salary}, {employee._password}, {employee._age}, {employee._height}, {employee._cpf}, {employee._job})");
         }
             
     }

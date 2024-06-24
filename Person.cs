@@ -4,13 +4,13 @@ namespace Test
 {
     class Person
     {
-        public string _first_name {get; set;}
-        public string _last_name {get; set;}
-        public string _email {get; set;}
-        public string _password {get; set;}
+        public string _first_name {get; set;} = string.Empty;
+        public string _last_name {get; set;} = string.Empty;
+        public string _email {get; set;} = string.Empty;
+        public string _password {get; set;} = string.Empty;
         public int _age {get; set;}
         public float _height {get; set;}
-        public string _cpf {get; set;}
+        public string _cpf {get; set;} = string.Empty;
 
 
         public Person()

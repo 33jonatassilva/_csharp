@@ -1,19 +1,21 @@
+using Microsoft.Identity.Client;
+
 namespace Test
 {
     class Product
     {
-        private string _id;
-        private string _name;
-        private string _category;
-        private float _value;
-        private int _quantity;
+        public string _id {get; set;}
+        public string _name {get; set;}
+        public string _category {get; set;}
+        public float _value {get; set;}
+        public int _quantity {get; set;}
 
 
         public Product()
         {
-            _id = "";
-            _name = "";
-            _category = "";
+            _id = string.Empty;
+            _name = string.Empty;
+            _category = string.Empty;
             _value = -1;
             _quantity = -1;
         }

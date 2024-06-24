@@ -1,4 +1,4 @@
-using System;
+
 using MySql.Data.MySqlClient;
 
 public static class DatabaseColector
@@ -7,8 +7,6 @@ public static class DatabaseColector
 
     public static void ExecuteQuery(string query)
     {
-
-
         try
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))

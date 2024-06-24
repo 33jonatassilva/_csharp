@@ -11,7 +11,7 @@ namespace Test
     class Employee : Person
     {
         //public string _id {get; set;}
-        public string _job {get; set;}
+        public string _job {get; set;} = string.Empty;
         public float _salary {get; set;}
 
         //private EmployeeFunc func = new EmployeeFunc();
@@ -20,7 +20,6 @@ namespace Test
         public Employee() //: base(_first_name, _last_name, _email, _password, _age, _height, _cpf)
         {
             //_id = func.GenerateID();
-            _job = string.Empty;
             _salary = -1;
             _age = -1;
             _height = -1;

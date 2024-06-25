@@ -73,19 +73,19 @@ namespace Test
             switch (int.Parse(option))
             {
                 case 1:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_products SET name = \'{replace}\' WHERE idProduct = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(2, $"UPDATE dbo_products SET name = \'{replace}\' WHERE idProduct = \'{id}\';");
                     break;
 
                 case 2:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_products SET category = {replace} WHERE idProduct = {id};");
+                    DatabaseColector.ExecuteQuery(2,$"UPDATE dbo_products SET category = {replace} WHERE idProduct = {id};");
                     break;
 
                 case 3:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_products SET value = {replace} WHERE idProduct = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(2, $"UPDATE dbo_products SET value = {replace} WHERE idProduct = \'{id}\';");
                     break;
 
                 case 4:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_products SET quantity = {replace} WHERE idProduct = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(2, $"UPDATE dbo_products SET quantity = {replace} WHERE idProduct = \'{id}\';");
                     break;
 
 
@@ -104,7 +104,7 @@ namespace Test
 
             if (id.Length == 5)
             {
-                DatabaseColector.ExecuteQuery($"DELETE FROM dbo_products WHERE idProduct = \'{id}\';");
+                DatabaseColector.ExecuteQuery(2, $"DELETE FROM dbo_products WHERE idProduct = \'{id}\';");
                 return;
             }
 
@@ -124,7 +124,7 @@ namespace Test
 
             if (id.Length == 6)
             {
-                DatabaseColector.ExecuteQuery($"SELECT * FROM dbo_products WHERE idProduct = \'{id}\'");
+                DatabaseColector.ExecuteQuery(2, $"SELECT * FROM dbo_products WHERE idProduct = \'{id}\'");
                 return;
             }
 
@@ -136,13 +136,13 @@ namespace Test
 
         public static void listProducts()
         {
-            DatabaseColector.ExecuteQuery("SELECT * FROM dbo_products");
+            DatabaseColector.ExecuteQuery(2, "SELECT * FROM dbo_products");
         }
 
 
         public static void addProduct(Product product)
         {
-            DatabaseColector.ExecuteQuery($"INSERT INTO dbo_Products() VALUES (\'{GenerateID()}\', \'{product._name}\', \'{product._category}\', \'{product._value}\', {product._quantity})");
+            DatabaseColector.ExecuteQuery(2, $"INSERT INTO dbo_Products() VALUES (\'{GenerateID()}\', \'{product._name}\', \'{product._category}\', \'{product._value}\', {product._quantity})");
         }
 
     }

@@ -27,7 +27,7 @@ namespace Test
                     "2. Editar usuário\n" +
                     "3. Excluir usuário\n" +
                     "4. Consultar usuário\n" +
-                    "5. Listar produtos\n\n" +
+                    "5. Listar usuário\n\n" +
                     "Digite uma opcão válida: ");
 
 

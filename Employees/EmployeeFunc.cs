@@ -29,39 +29,39 @@ namespace Test
             Employee employee = new Employee();
 
             Console.Write("Digite o nome do usuário: ");
-            employee._first_name = Console.ReadLine() ?? string.Empty;
+            employee.FirstName = Console.ReadLine() ?? string.Empty;
 
 
             Console.Write("Digite o sobrenome do usuário: ");
-            employee._last_name = Console.ReadLine() ?? string.Empty;
+            employee.LastName = Console.ReadLine() ?? string.Empty;
 
 
             Console.Write("Digite a função do usuário: ");
-            employee._job = Console.ReadLine() ?? string.Empty;
+            employee.Job = Console.ReadLine() ?? string.Empty;
 
 
             Console.Write("Digite o salário do usuário: ");
-            employee._salary = int.Parse(Console.ReadLine() ?? string.Empty) ;
+            employee.Salary = int.Parse(Console.ReadLine() ?? string.Empty) ;
 
 
             Console.Write("Digite o e-mail do usuário: ");
-            employee._email = Console.ReadLine() ?? string.Empty;
+            employee.Email = Console.ReadLine() ?? string.Empty;
 
 
             Console.Write("Digite o idade do usuário: ");
-            employee._age = int.Parse(Console.ReadLine() ?? string.Empty) ;
+            employee.Age = int.Parse(Console.ReadLine() ?? string.Empty) ;
 
 
             Console.Write("Digite o senha do usuário: ");
-            employee._password = Console.ReadLine() ?? string.Empty;
+            employee.Password = Console.ReadLine() ?? string.Empty;
 
 
             Console.Write("Digite o altura do usuário: ");
-            employee._height = float.Parse(Console.ReadLine() ?? string.Empty);
+            employee.Height = float.Parse(Console.ReadLine() ?? string.Empty);
 
 
             Console.Write("Digite o cpf do usuário: ");
-            employee._cpf = Console.ReadLine() ?? string.Empty;
+            employee.Cpf = Console.ReadLine() ?? string.Empty;
 
 
             return employee;
@@ -97,38 +97,38 @@ namespace Test
             switch (int.Parse(option))
             {
                 case 1:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET job = \'{replace}\' WHERE idUser = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET job = \'{replace}\' WHERE idUser = \'{id}\';");
                     break;
 
                 case 2:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET salary = {replace} WHERE idUser = {id};");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET salary = {replace} WHERE idUser = {id};");
                     break;
 
                 case 3:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET first_name = \'{replace}\' WHERE idUser = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET first_name = \'{replace}\' WHERE idUser = \'{id}\';");
                     break;
 
                 case 4:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET last_name = \'{replace}\' WHERE idUser = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET last_name = \'{replace}\' WHERE idUser = \'{id}\';");
                     break;
 
                 case 5:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET email = \'{replace}\' WHERE idUser = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET email = \'{replace}\' WHERE idUser = \'{id}\';");
                     break;
                 case 6:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET password = \'{replace}\' WHERE idUser = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET password = \'{replace}\' WHERE idUser = \'{id}\';");
                     break;
 
                 case 7:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET age = {replace} WHERE idUser = {id};");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET age = {replace} WHERE idUser = {id};");
                     break;
 
                 case 8:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET height = {replace} WHERE idUser = {id};");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET height = {replace} WHERE idUser = {id};");
                     break;
 
                 case 9:
-                    DatabaseColector.ExecuteQuery($"UPDATE dbo_employees SET cpf = \'{replace}\' WHERE idUser = \'{id}\';");
+                    DatabaseColector.ExecuteQuery(1, $"UPDATE dbo_employees SET cpf = \'{replace}\' WHERE idUser = \'{id}\';");
                     break;
 
                 default:
@@ -146,7 +146,7 @@ namespace Test
 
             if (id.Length == 5)
             {
-                DatabaseColector.ExecuteQuery($"DELETE FROM dbo_employees WHERE id = \'{id}\';");
+                DatabaseColector.ExecuteQuery(1, $"DELETE FROM dbo_employees WHERE id = \'{id}\';");
                 return;
             }
 
@@ -166,7 +166,7 @@ namespace Test
 
             if (id.Length == 5)
             {
-                DatabaseColector.ExecuteQuery($"SELECT * FROM dbo_employees WHERE idUser = \'{id}\'");
+                DatabaseColector.ExecuteQuery(1, $"SELECT * FROM dbo_employees WHERE idUser = \'{id}\'");
                 return;
             }
 
@@ -178,13 +178,13 @@ namespace Test
 
         public static void listEmployees()
         {
-            DatabaseColector.ExecuteQuery("SELECT * FROM dbo_employees");
+            DatabaseColector.ExecuteQuery(1, "SELECT * FROM dbo_employees");
         }
 
 
         public static void addEmployee(Employee employee)
         {
-            DatabaseColector.ExecuteQuery($"INSERT INTO dbo_employees() VALUES (\'{GenerateID()}\', \'{employee._first_name}\', \'{employee._last_name}\', \'{employee._email}\', {employee._salary}, \'{employee._password}\', \'{employee._age}\', {employee._height}, \'{employee._cpf}\', \'{employee._job}\')");
+            DatabaseColector.ExecuteQuery(1, $"INSERT INTO dbo_employees() VALUES (\'{GenerateID()}\', \'{employee.FirstName}\', \'{employee.LastName}\', \'{employee.Email}\', {employee.Salary}, \'{employee.Password}\', \'{employee.Age}\', {employee.Height}, \'{employee.Cpf}\', \'{employee.Job}\')");
         }
 
     }

@@ -54,14 +54,9 @@ namespace Test
             string id = Console.ReadLine() ?? string.Empty;
 
         start:
-            Console.Write(
-                "1. name\n" +
-                "2. category\n" +
-                "3. value\n" +
-                "4. quantity\n\n" +
-               
-                "Digite a opção desejada: "
-            );
+            
+            
+            Menu.editProduct();
 
 
 
@@ -143,6 +138,32 @@ namespace Test
         public static void addProduct(Product product)
         {
             DatabaseColector.ExecuteQuery(2, $"INSERT INTO dbo_Products() VALUES (\'{GenerateID()}\', \'{product._name}\', \'{product._category}\', \'{product._value}\', {product._quantity})");
+        }
+
+
+
+        public static void choicesOfActionInProducts(int option)
+        {
+            switch (option)
+                {
+                    case 1:
+                        ProductFunc.addProduct(ProductFunc.insertProduct());
+                        break;
+                    case 2:
+                        ProductFunc.editProduct();
+                        break;
+                    case 3:
+                        ProductFunc.deleteProduct();
+                        break;
+                    case 4: 
+                        ProductFunc.consultProduct();
+                        break;
+                    case 5:
+                        ProductFunc.listProducts();
+                        break;
+                    default:
+                        break;
+                }
         }
 
     }

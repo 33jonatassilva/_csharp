@@ -74,18 +74,8 @@ namespace Test
             string id = Console.ReadLine() ?? string.Empty;
 
         start:
-            Console.Write(
-                "1. job\n" +
-                "2. salary\n" +
-                "3. first_name\n" +
-                "4. last_name\n" +
-                "5. email\n" +
-                "6. password\n" +
-                "7. age\n" +
-                "8. height\n" +
-                "9. cpf\n\n" +
-                "Digite a opção desejada: "
-            );
+            
+            Menu.editEmployee();
 
 
 
@@ -185,6 +175,32 @@ namespace Test
         public static void addEmployee(Employee employee)
         {
             DatabaseColector.ExecuteQuery(1, $"INSERT INTO dbo_employees() VALUES (\'{GenerateID()}\', \'{employee.FirstName}\', \'{employee.LastName}\', \'{employee.Email}\', {employee.Salary}, \'{employee.Password}\', \'{employee.Age}\', {employee.Height}, \'{employee.Cpf}\', \'{employee.Job}\')");
+        }
+
+
+        public static void choicesOfActionInEmployees(int option)
+        {
+            switch (option)
+                {
+                    case 1:
+                        EmployeeFunc.addEmployee(EmployeeFunc.insertEmployee());
+                        break;
+                    case 2:
+                        EmployeeFunc.editEmployee();
+                        break;
+                    case 3:
+                        EmployeeFunc.deleteEmployee();
+                        break;
+                    case 4: 
+                        EmployeeFunc.consultEmployee();
+                        break;
+                    case 5:
+                        EmployeeFunc.listEmployees();
+                        break;
+                    default:
+                        break;
+            
+                }
         }
 
     }
